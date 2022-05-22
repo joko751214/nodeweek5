@@ -71,14 +71,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "127.0.0.1:3000/user?token=6276532b78634221c137502d",
+					"raw": "https://guarded-stream-77823.herokuapp.com/user?token=6276532b78634221c137502d",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"guarded-stream-77823",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"user"
 					],
