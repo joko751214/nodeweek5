@@ -6,6 +6,7 @@ const postRouter = require("./routes/post");
 const userRouter = require("./routes/user");
 require("dotenv").config({ path: "./config.env" });
 const cors = require("cors");
+const appError = require("./service/appError");
 
 // 補捉程式錯誤
 process.on("uncaughtException", (err) => {
@@ -31,7 +32,7 @@ app.use("/posts", postRouter);
 app.use("/user", userRouter);
 
 app.use((req, res, next) => {
-  errorHandle(res, 404, "無此網站路由");
+  appError(404, "無此網站路由", next);
 });
 
 const { resErrorDev, resErrorProd } = require("./service/resError");
