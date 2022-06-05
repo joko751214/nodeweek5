@@ -22,6 +22,8 @@ const post = {
   createPost: async (req, res, next) => {
     const { user, content } = req.body;
     if (!user) return appError(400, "缺少 user ID", next);
+    const checkUser = await Post.findById(user);
+    if (!checkUser) return appError(400, "使用者不存在", next);
     if (!content) return appError(400, "未填寫貼文內容", next);
     let image = "";
     if (req.file) {
