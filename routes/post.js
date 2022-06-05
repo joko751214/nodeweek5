@@ -14,9 +14,8 @@ router.post(
   handleErrorAsync(PostController.createPost)
 );
 
-router.delete("/", handleErrorAsync(PostController.deleteAll));
-
-router.delete("/:id", handleErrorAsync(PostController.deletePost));
+router.delete("/deletePost/:id", handleErrorAsync(PostController.deletePost));
+router.delete("/deletePosts", handleErrorAsync(PostController.deleteAll));
 
 router.patch(
   "/:id",
